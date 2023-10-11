@@ -1,0 +1,41 @@
+#navbar {
+  padding: 0 10px;
+  background-color: rgb(138, 43, 226);
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  flex: 1;
+}
+
+.navbar-icon {
+  font-size: 34px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.navbar-icon:hover {
+  background-color: rgb(169, 77, 255);
+}
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  font-family: 'Fjalla One', sans-serif;
+  color: #fff;
+}
+
+.logo {
+  height: 68px;
+}
