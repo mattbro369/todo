@@ -1,3 +1,8 @@
+:root {
+  --main-color-purple: rgb(138, 43, 226);
+  --main-color-purple-off: rgb(169, 77, 255);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +10,7 @@
 
 #navbar {
   padding: 0 10px;
-  background-color: rgb(138, 43, 226);
+  background-color: var(--main-color-purple);
   height: 80px;
   display: flex;
   align-items: center;
@@ -40,7 +45,7 @@
 }
 
 .navbar-icon:hover {
-  background-color: rgb(169, 77, 255);
+  background-color: var(--main-color-purple-off);
 }
 .navbar-center {
   display: flex;
@@ -56,6 +61,8 @@
 /* Sidenav + Content */
 .sidenav-content-wrapper {
   height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  color: black;
 }
 
 /* Sidenav */
@@ -64,17 +71,18 @@
 #sidenav {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
-  background-color: #111; /* Black*/
+  background-color: #e3e7e8; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  box-shadow: 3px 0 5px -2px #888;
 }
 
 /* The navigation menu links */
 #sidenav a {
   padding: 8px 8px 8px 32px;
+  color: inherit;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
   display: block;
   transition: 0.3s;
   cursor: pointer;
@@ -82,7 +90,7 @@
 
 /* When you mouse over the navigation links, change their color */
 #sidenav a:hover {
-  color: #f1f1f1;
+  color: #0000009d;
 }
 
 /* Position and style the close button (top right corner) */
