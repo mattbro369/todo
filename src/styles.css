@@ -80,7 +80,7 @@
 /* The navigation menu links */
 #sidenav a {
   padding: 8px 8px 8px 32px;
-  color: inherit;
+  color: #202020;
   text-decoration: none;
   font-size: 25px;
   display: block;
@@ -99,6 +99,8 @@
   justify-content: flex-end;
   padding-right: 20px;
   font-size: 30px;
+  color: #202020;
+  background-color: red;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
