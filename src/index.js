@@ -17,6 +17,10 @@ const navButtons = Array.from(document.getElementsByClassName('navbar-icon'));
 
 navButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    button === navButtons[0] ? sideNavFunc.open() : console.log('Home'); // Change this to open / close menu + home page
+    if (button === navButtons[0] && sideNavFunc.isSideNavOpen === false) {
+      sideNavFunc.open();
+    } else {
+      sideNavFunc.close();
+    }
   });
 });
