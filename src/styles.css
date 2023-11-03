@@ -8,6 +8,12 @@
   padding: 0;
 }
 
+#main-page-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
 #navbar {
   padding: 0 10px;
   background-color: var(--main-color-purple);
@@ -59,7 +65,7 @@
 }
 
 /* Sidenav + Content */
-.sidenav-content-wrapper {
+#main-page-wrapper {
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
   color: black;
@@ -71,6 +77,7 @@
 #sidenav {
   height: 100%; /* 100% Full-height */
   padding-top: 22px;
+  width: 0; /* 0 width - change this with JavaScript */
   background-color: #e3e7e89e;
   overflow-x: hidden; /* Disable horizontal scroll */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -80,6 +87,7 @@
 /* The navigation menu links */
 #sidenav a {
   padding: 8px 8px 8px 32px;
+  min-width: 250px; /* This stops the text from wrapping when sidenav opens */
   color: #202020;
   text-decoration: none;
   font-size: 25px;
@@ -93,19 +101,10 @@
   color: #0000009d;
 }
 
-/* Position and style the close button (top right corner) */
-#sidenav .closebutton {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 20px;
-  font-size: 30px;
-  color: #202020;
-  background-color: red;
-}
-
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main-content-wrapper {
   transition: margin-left 0.5s;
+  width: 100%;
   padding: 20px;
 }
 
