@@ -9,7 +9,7 @@ export const sideNavFunc = (function () {
     sideNavBar.style.width = '250px';
     // mainContent.style.marginLeft = '250px'; REMOVE THIS
 
-    const sidebarSections = ['Home', 'Today', 'This Week', 'Projects'];
+    const sidebarSections = ['Today', 'This Week', 'Projects'];
 
     for (let i = 0; i < sidebarSections.length; i++) {
       let element = document.createElement('a');
