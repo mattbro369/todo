@@ -97,12 +97,29 @@
   cursor: pointer;
 }
 
-/* When you mouse over the navigation links, change their color */
+#sidenav .projects-wrapper {
+  display: flex;
+}
+
+#dropdown-icon {
+  filter: invert(12%) sepia(1%) saturate(0%) hue-rotate(68deg) brightness(100%)
+    contrast(98%);
+  padding: 8px;
+  transform: rotate(-90deg);
+  transition: 0.5s;
+}
+
+#dropdown-icon:hover {
+  cursor: pointer;
+  filter: invert(0%) sepia(100%) saturate(21%) hue-rotate(2deg) brightness(101%)
+    contrast(107%);
+}
+
 #sidenav a:hover {
   color: #0000009d;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+/* Push the page content to the right when you open the side navigation */
 #main-content-wrapper {
   transition: margin-left 0.5s;
   width: 100%;
