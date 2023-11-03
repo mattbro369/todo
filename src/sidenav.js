@@ -7,7 +7,7 @@ let sideNavRendered = false;
 export const sideNavFunc = (function () {
   const renderSideNav = function () {
     sideNavBar.style.width = '250px';
-    mainContent.style.marginLeft = '250px';
+    // mainContent.style.marginLeft = '250px'; REMOVE THIS
 
     const sidebarSections = ['Home', 'Today', 'This Week', 'Projects'];
 
@@ -26,7 +26,7 @@ export const sideNavFunc = (function () {
       renderSideNav();
     } else {
       sideNavBar.style.width = '250px';
-      mainContent.style.marginLeft = '250px';
+      // mainContent.style.marginLeft = '250px'; REMOVE THIS
     }
     sideNavFunc.isSideNavOpen = true;
     sideNavRendered = true;
