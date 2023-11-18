@@ -1,8 +1,10 @@
 import 'normalize.css';
 import './styles.css';
+import './content';
 import tickLogo from './assets/tick-logo.svg';
 
 import { sideNavFunc } from './sidenav';
+import { render } from './content';
 
 // DOM Cache
 export const sideNavBar = document.getElementById('sidenav');
@@ -21,6 +23,10 @@ navButtons.forEach((button) => {
       sideNavFunc.open();
     } else {
       sideNavFunc.close();
+    }
+
+    if (button === navButtons[1]) {
+      render.home();
     }
   });
 });
