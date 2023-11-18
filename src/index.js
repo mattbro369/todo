@@ -4,7 +4,7 @@ import './content';
 import tickLogo from './assets/tick-logo.svg';
 
 import { sideNavFunc } from './sidenav';
-import { render } from './content';
+import { renderMain } from './content';
 
 // DOM Cache
 export const sideNavBar = document.getElementById('sidenav');
