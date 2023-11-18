@@ -11,7 +11,7 @@ export const sideNavFunc = (function () {
     console.log('rendered');
     sideNavBar.style.width = '250px';
 
-    const sidebarSections = ['Today', 'This Week', 'Projects'];
+    const sidebarSections = ['Home', 'Today', 'This Week', 'Projects'];
 
     for (let i = 0; i < sidebarSections.length; i++) {
       let element = document.createElement('a');
@@ -20,7 +20,7 @@ export const sideNavFunc = (function () {
       element.textContent = sidebarSections[i];
       element.classList.add('sidenav-item');
 
-      if (i === 2) {
+      if (i === sidebarSections.length - 1) {
         let wrapper = document.createElement('div');
         let icon = document.createElement('img');
 
