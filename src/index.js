@@ -16,7 +16,7 @@ logo.src = tickLogo;
 // Navigation | Open Sidebar | Home
 
 // Render Home on load
-render.home();
+renderMain.home();
 
 const navButtons = Array.from(document.getElementsByClassName('navbar-icon'));
 
@@ -29,7 +29,7 @@ navButtons.forEach((button) => {
     }
 
     if (button === navButtons[1]) {
-      render.home();
+      renderMain.renderAddTaskButton();
     }
   });
 });
