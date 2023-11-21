@@ -83,8 +83,10 @@ h1 {
 
 #main-page-wrapper #heading-wrapper {
   display: flex;
+  /* justify-content: space-between; */
   align-items: baseline;
   gap: 10px;
+  margin-bottom: 25px;
 }
 
 #main-page-wrapper #main-heading {
@@ -96,6 +98,31 @@ h1 {
   font-size: 1.1em;
   font-weight: 600;
   color: var(--text-color-light-grey);
+}
+
+/* Add task button */
+#add-task-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 17px;
+  width: 116px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+#add-task-button > img {
+  border-radius: 50%;
+}
+
+#add-task-button > div {
+  font-weight: 600;
+}
+
+#add-task-button:hover {
+  cursor: pointer;
 }
 
 /* Sidenav */
