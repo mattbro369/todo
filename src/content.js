@@ -33,6 +33,7 @@ export const renderMain = (function () {
     let addButtonText = document.createElement('div');
 
     addIcon.src = addIconImg;
+    addIcon.id = 'add-task-icon';
     addButtonText.textContent = 'Add task';
     addTaskButton.id = 'add-task-button';
     addTaskButton.appendChild(addIcon);

@@ -1,7 +1,8 @@
 :root {
-  --main-color-purple: rgb(138, 43, 226);
+  --main-color-purple: #8a2be2;
   --main-color-purple-off: rgb(169, 77, 255);
   --text-color-main-black: color: #202020;
+  --text-color-hover-black: #0000009d;
   --text-color-light-grey: rgba(0, 0, 0, 0.44);
 }
 
@@ -110,7 +111,9 @@ h1 {
   height: 24px;
   background-color: transparent;
   border: none;
+  border-radius: 10px;
   box-shadow: none;
+  padding: 0 9px;
 }
 
 #add-task-button > img {
@@ -123,6 +126,17 @@ h1 {
 
 #add-task-button:hover {
   cursor: pointer;
+}
+
+#add-task-button:hover img {
+  filter: invert(19%) sepia(54%) saturate(6519%) hue-rotate(269deg)
+    brightness(93%) contrast(90%);
+  transition: 0.1s;
+}
+
+#add-task-button:hover div {
+  color: var(--main-color-purple);
+  transition: 0.3s;
 }
 
 /* Sidenav */
@@ -170,7 +184,7 @@ h1 {
 }
 
 #sidenav a:hover {
-  color: #0000009d;
+  color: var(--text-color-hover-black);
 }
 
 /* Push the page content to the right when you open the side navigation */
