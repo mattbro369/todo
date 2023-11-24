@@ -5,14 +5,17 @@ import './sidenav.css';
 import './content';
 import tickLogo from './assets/tick-logo.svg';
 
-//
-import { sideNavFunc } from './sidenav';
-import { renderMain } from './content';
-import { task } from './tasks';
+// JS
+import * as sideNavFunctions from './sidenav';
+import * as content from './content';
+import * as taskFunctions from './tasks';
 
 // DOM Cache
 export const sideNavBar = document.getElementById('sidenav');
-export const mainContent = document.getElementById('main-content-wrapper');
+export const mainContentWrapper = document.getElementById(
+  'main-content-wrapper'
+);
+export const contentWrapper = document.getElementById('content-wrapper');
 
 const logo = document.getElementById('tickLogo');
 logo.src = tickLogo;
@@ -20,20 +23,30 @@ logo.src = tickLogo;
 // Navigation | Open Sidebar | Home
 
 // Render Home on load
-renderMain.home();
+content.renderMain.home();
 
 const navButtons = Array.from(document.getElementsByClassName('navbar-icon'));
 
 navButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    if (button === navButtons[0] && sideNavFunc.isSideNavOpen === false) {
-      sideNavFunc.open();
+    if (button === navButtons[0] && sideNavFunctions.isSideNavOpen === false) {
+      sideNavFunctions.open();
     } else {
-      sideNavFunc.close();
+      sideNavFunctions.close();
     }
 
     if (button === navButtons[1]) {
-      task.renderAddTaskPrompt(mainContent);
+      content.renderMain.home();
     }
   });
 });
+
+// Manage task objects
+
+export const taskArray = [];
+
+console.log(taskArray.length);
+
+if (taskArray.length < 1) {
+  taskFunctions.task.renderAddTaskButton(contentWrapper);
+}
