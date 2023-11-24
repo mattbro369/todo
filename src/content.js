@@ -3,13 +3,15 @@ import { mainContent } from '.';
 import addIconImg from './assets/add.svg';
 
 export const renderMain = (function () {
+  const headingWrapper = document.getElementById('heading-wrapper');
+  const contentWrapper = document.getElementById('content-wrapper');
+
   const home = function () {
     renderHomeHeading();
     renderAddTaskButton();
   };
 
   const renderHomeHeading = function () {
-    const headingWrapper = document.getElementById('heading-wrapper');
     //Heading
     let mainHeading = document.createElement('h1');
     mainHeading.textContent = 'Home';
@@ -35,7 +37,8 @@ export const renderMain = (function () {
     addTaskButton.id = 'add-task-button';
     addTaskButton.appendChild(addIcon);
     addTaskButton.appendChild(addButtonText);
-    mainContent.appendChild(addTaskButton);
+    contentWrapper.appendChild(addTaskButton);
   };
+
   return { home, renderHomeHeading, renderAddTaskButton };
 })();
