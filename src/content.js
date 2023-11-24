@@ -1,6 +1,7 @@
 // DOM Cache
 import { mainContent } from '.';
 import addIconImg from './assets/add.svg';
+import * as taskFunctions from './tasks';
 
 export const renderMain = (function () {
   const headingWrapper = document.getElementById('heading-wrapper');
@@ -8,7 +9,6 @@ export const renderMain = (function () {
 
   const home = function () {
     renderHomeHeading();
-    renderAddTaskButton();
   };
 
   const renderHomeHeading = function () {
@@ -26,19 +26,5 @@ export const renderMain = (function () {
     headingWrapper.appendChild(dateHeader);
   };
 
-  const renderAddTaskButton = function () {
-    let addTaskButton = document.createElement('button');
-    let addIcon = document.createElement('img');
-    let addButtonText = document.createElement('div');
-
-    addIcon.src = addIconImg;
-    addIcon.id = 'add-task-icon';
-    addButtonText.textContent = 'Add task';
-    addTaskButton.id = 'add-task-button';
-    addTaskButton.appendChild(addIcon);
-    addTaskButton.appendChild(addButtonText);
-    contentWrapper.appendChild(addTaskButton);
-  };
-
-  return { home, renderHomeHeading, renderAddTaskButton };
+  return { home, renderHomeHeading };
 })();
