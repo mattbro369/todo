@@ -9,10 +9,7 @@ export const renderMain = (function () {
   };
 
   const renderHomeHeading = function () {
-    const headingWrapper = document.createElement('div');
-    headingWrapper.id = 'heading-wrapper';
-    mainContent.appendChild(headingWrapper);
-
+    const headingWrapper = document.getElementById('heading-wrapper');
     //Heading
     let mainHeading = document.createElement('h1');
     mainHeading.textContent = 'Home';
