@@ -17,7 +17,6 @@ h1 {
 
 #main-page-wrapper {
   display: flex;
-  height: 100vh;
   width: 100%;
   font-family: 'Open Sans', sans-serif;
   color: var(--text-color-main-black);
@@ -26,7 +25,7 @@ h1 {
 #navbar {
   padding: 0 10px;
   background-color: var(--main-color-purple);
-  height: 80px;
+  height: 9vh;
   display: flex;
   align-items: center;
 }
@@ -79,11 +78,20 @@ h1 {
 
 /* Content */
 
+#main-content-wrapper {
+  height: 86vh;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.5s;
+  width: 100%;
+  padding: 20px;
+}
+
 #heading-wrapper {
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 9px;
 }
 
 #main-heading {
@@ -95,6 +103,11 @@ h1 {
   font-size: 1.1em;
   font-weight: 600;
   color: var(--text-color-light-grey);
+}
+
+#content-wrapper {
+  display: grid;
+  flex: 1;
 }
 
 /* Add task button */
@@ -132,13 +145,6 @@ h1 {
 #add-task-button:hover div {
   color: var(--main-color-purple);
   transition: 0.3s;
-}
-
-/* Push the page content to the right when you open the side navigation */
-#main-content-wrapper {
-  transition: margin-left 0.5s;
-  width: 100%;
-  padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
