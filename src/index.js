@@ -5,7 +5,7 @@ import './sidenav.css';
 import './content';
 import tickLogo from './assets/tick-logo.svg';
 
-// JS
+//
 import { sideNavFunc } from './sidenav';
 import { renderMain } from './content';
 import { task } from './tasks';
