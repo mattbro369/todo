@@ -19,6 +19,8 @@ h1 {
   display: flex;
   height: 100vh;
   width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color-main-black);
 }
 
 #navbar {
@@ -75,78 +77,24 @@ h1 {
   height: 68px;
 }
 
-/* Sidenav + Content */
-#main-page-wrapper {
-  height: 100vh;
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text-color-main-black);
-}
+/* Content */
 
-#main-page-wrapper #heading-wrapper {
+#heading-wrapper {
   display: flex;
-  /* justify-content: space-between; */
   align-items: baseline;
   gap: 10px;
   margin-bottom: 25px;
 }
 
-#main-page-wrapper #main-heading {
+#main-heading {
   font-size: 1.7em;
   font-weight: 600;
 }
 
-#main-page-wrapper #date-header {
+#date-header {
   font-size: 1.1em;
   font-weight: 600;
   color: var(--text-color-light-grey);
-}
-
-/* Sidenav */
-
-/* The side navigation menu */
-#sidenav {
-  height: 100%; /* 100% Full-height */
-  padding-top: 22px;
-  width: 0; /* 0 width - change this with JavaScript */
-  background-color: #e3e7e89e;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-  box-shadow: 3px 0 5px -2px #888;
-}
-
-/* The navigation menu links */
-#sidenav a {
-  padding: 8px 8px 8px 32px;
-  width: max-content;
-  color: var(--text-color-main-black);
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
-  display: block;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-#sidenav .projects-wrapper {
-  display: flex;
-}
-
-#dropdown-icon {
-  filter: invert(12%) sepia(1%) saturate(0%) hue-rotate(68deg) brightness(100%)
-    contrast(98%);
-  padding: 8px;
-  transform: rotate(-90deg);
-  transition: 0.5s;
-}
-
-#dropdown-icon:hover {
-  cursor: pointer;
-  filter: invert(0%) sepia(100%) saturate(21%) hue-rotate(2deg) brightness(101%)
-    contrast(107%);
-}
-
-#sidenav a:hover {
-  color: var(--text-color-hover-black);
 }
 
 /* Add task button */
@@ -185,8 +133,6 @@ h1 {
   color: var(--main-color-purple);
   transition: 0.3s;
 }
-
-/* Task Cards */
 
 /* Push the page content to the right when you open the side navigation */
 #main-content-wrapper {
