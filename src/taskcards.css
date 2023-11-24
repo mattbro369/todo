@@ -1,8 +1,0 @@
-/* Task Cards */
-
-.add-task-wrapper {
-  border: 3px solid var(--text-color-light-grey);
-  border-radius: 10px;
-  width: 100px;
-  height: 45px;
-}
