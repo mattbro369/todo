@@ -1,10 +1,14 @@
 import 'normalize.css';
 import './styles.css';
+import './taskcards.css';
+import './sidenav.css';
 import './content';
 import tickLogo from './assets/tick-logo.svg';
 
+// JS
 import { sideNavFunc } from './sidenav';
 import { renderMain } from './content';
+import { task } from './tasks';
 
 // DOM Cache
 export const sideNavBar = document.getElementById('sidenav');
@@ -29,7 +33,7 @@ navButtons.forEach((button) => {
     }
 
     if (button === navButtons[1]) {
-      renderMain.renderAddTaskButton();
+      task.renderAddTaskPrompt(mainContent);
     }
   });
 });
