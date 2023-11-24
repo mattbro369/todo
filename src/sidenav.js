@@ -1,4 +1,4 @@
-import { mainContent } from '.';
+import { mainContentWrapper } from '.';
 import { sideNavBar } from '.';
 import dropdownIcon from './assets/dropdown-icon.svg';
 
@@ -57,7 +57,7 @@ export const sideNavFunc = (function () {
     console.log('closed');
     sideNavBar.style.transition = '0.5s';
     sideNavBar.style.width = '0';
-    mainContent.style.marginLeft = '0';
+    mainContentWrapper.style.marginLeft = '0';
 
     sideNavFunc.isSideNavOpen = false; // Set the sidebar state to closed
   };
