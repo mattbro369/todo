@@ -1,6 +1,6 @@
 import 'normalize.css';
 import './styles.css';
-import './taskcards.css';
+import './add-task-prompt.css';
 import './sidenav.css';
 import './content';
 import tickLogo from './assets/tick-logo.svg';
@@ -29,10 +29,15 @@ const navButtons = Array.from(document.getElementsByClassName('navbar-icon'));
 
 navButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    if (button === navButtons[0] && sideNavFunctions.isSideNavOpen === false) {
-      sideNavFunctions.open();
+    if (
+      button === navButtons[0] &&
+      sideNavFunctions.sideNavFunc.isSideNavOpen === false
+    ) {
+      sideNavFunctions.sideNavFunc.open();
+      console.log('worked');
     } else {
-      sideNavFunctions.close();
+      sideNavFunctions.sideNavFunc.close();
+      console.log(sideNavFunctions.sideNavFunc.isSideNavOpen);
     }
 
     if (button === navButtons[1]) {

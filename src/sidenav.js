@@ -45,12 +45,12 @@ export const sideNavFunc = (function () {
   const open = function () {
     console.log('open');
     if (!isSideNavOpen && !sideNavRendered) {
-      renderSideNav();
+      sideNavFunc.renderSideNav();
     } else {
       sideNavBar.style.width = '250px';
     }
     sideNavFunc.isSideNavOpen = true;
-    sideNavRendered = true;
+    sideNavFunc.sideNavRendered = true;
   };
 
   const close = function () {
@@ -58,7 +58,6 @@ export const sideNavFunc = (function () {
     sideNavBar.style.transition = '0.5s';
     sideNavBar.style.width = '0';
     mainContentWrapper.style.marginLeft = '0';
-
     sideNavFunc.isSideNavOpen = false; // Set the sidebar state to closed
   };
 
