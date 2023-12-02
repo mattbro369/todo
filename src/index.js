@@ -34,10 +34,8 @@ navButtons.forEach((button) => {
       sideNavFunctions.sideNavFunc.isSideNavOpen === false
     ) {
       sideNavFunctions.sideNavFunc.open();
-      console.log('worked');
     } else {
       sideNavFunctions.sideNavFunc.close();
-      console.log(sideNavFunctions.sideNavFunc.isSideNavOpen);
     }
 
     if (button === navButtons[1]) {
@@ -46,12 +44,11 @@ navButtons.forEach((button) => {
   });
 });
 
-// Manage task objects
-
 export const taskArray = [];
 
 console.log(taskArray.length);
 
 if (taskArray.length < 1) {
   taskFunctions.task.renderAddTaskButton(contentWrapper);
+  taskFunctions.task.renderNoTaskPage(contentWrapper);
 }
