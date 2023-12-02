@@ -40,17 +40,21 @@ export const sideNavFunc = (function () {
         sideNavBar.appendChild(element);
       }
     }
+    sideNavRendered = true;
   };
 
   const open = function () {
-    console.log('open');
+    console.log('is sidenav open = ' + isSideNavOpen);
+    console.log('is rendered = ' + sideNavRendered);
+
     if (!isSideNavOpen && !sideNavRendered) {
-      sideNavFunc.renderSideNav();
+      renderSideNav();
     } else {
       sideNavBar.style.width = '250px';
     }
-    sideNavFunc.isSideNavOpen = true;
-    sideNavFunc.sideNavRendered = true;
+    isSideNavOpen = true;
+    console.log('is sidenav open = ' + isSideNavOpen);
+    console.log('is rendered = ' + sideNavRendered);
   };
 
   const close = function () {
@@ -58,7 +62,7 @@ export const sideNavFunc = (function () {
     sideNavBar.style.transition = '0.5s';
     sideNavBar.style.width = '0';
     mainContentWrapper.style.marginLeft = '0';
-    sideNavFunc.isSideNavOpen = false; // Set the sidebar state to closed
+    isSideNavOpen = false; // Set the sidebar state to closed
   };
 
   const dropdownProjects = function () {
@@ -71,5 +75,5 @@ export const sideNavFunc = (function () {
     }
   };
 
-  return { renderSideNav, open, close, isSideNavOpen };
+  return { renderSideNav, open, close, isSideNavOpen, sideNavRendered };
 })();
