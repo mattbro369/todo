@@ -106,7 +106,6 @@ h1 {
 }
 
 #content-wrapper {
-  display: grid;
   flex: 1;
 }
 
@@ -117,11 +116,12 @@ h1 {
   justify-content: space-evenly;
   font-size: 17px;
   width: 116px;
-  height: 24px;
-  background-color: transparent;
-  border: none;
-  border-radius: 10px;
+  height: 35px;
+  background-color: var(--main-color-purple);
+  border: 1px solid var(--text-color-light-grey);
+  border-radius: 17px;
   box-shadow: none;
+  margin: 1em;
   padding: 0 9px;
 }
 
@@ -135,16 +135,26 @@ h1 {
 
 #add-task-button:hover {
   cursor: pointer;
-}
-
-#add-task-button:hover img {
-  filter: invert(19%) sepia(54%) saturate(6519%) hue-rotate(269deg)
-    brightness(93%) contrast(90%);
-}
-
-#add-task-button:hover div {
-  color: var(--main-color-purple);
+  background-color: var(--main-color-purple-off);
   transition: 0.3s;
+}
+
+/* No task - Sloth image */
+
+#no-task-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 10%;
+  flex-direction: column;
+}
+
+#sloth-image {
+  height: 265px;
+}
+
+#no-task-text {
+  font-family: 'Indie Flower', cursive;
+  font-size: 25px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
