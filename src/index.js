@@ -31,9 +31,10 @@ navButtons.forEach((button) => {
   button.addEventListener('click', () => {
     if (
       button === navButtons[0] &&
-      sideNavFunctions.sideNavFunc.sideNavRendered === false
+      sideNavFunctions.sideNavFunc.isSideNavOpen === false
     ) {
       sideNavFunctions.sideNavFunc.open();
+      console.log(sideNavFunctions.sideNavFunc.isSideNavOpen);
     } else {
       sideNavFunctions.sideNavFunc.close();
     }

@@ -2,59 +2,34 @@ import { mainContentWrapper } from '.';
 import { sideNavBar } from '.';
 import dropdownIcon from './assets/dropdown-icon.svg';
 
-let isSideNavOpen = false;
-let sideNavRendered = false;
 let projectsClicked = false;
 
+const sideNavItems = Array.from(
+  document.getElementsByClassName('sidenav-item')
+);
+
+console.log(sideNavItems);
+
+sideNavItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (sideNavItems.indexOf(item) === sideNavItems.length - 1) {
+      console.log(projectsClicked);
+      projectsClicked === false
+        ? (projectsClicked = true)
+        : (projectsClicked = false);
+      console.log(projectsClicked);
+      sideNavFunc.dropdownProjects();
+    }
+    console.log(item.textContent);
+  });
+});
+
+let isSideNavOpen = false;
+
 export const sideNavFunc = (function () {
-  const renderSideNav = function () {
-    console.log('rendered');
-    sideNavBar.style.width = '250px';
-
-    const sidebarSections = ['Home', 'Today', 'This Week', 'Projects'];
-
-    for (let i = 0; i < sidebarSections.length; i++) {
-      let element = document.createElement('a');
-
-      element.setAttribute('href', '#');
-      element.textContent = sidebarSections[i];
-      element.classList.add('sidenav-item');
-
-      if (i === sidebarSections.length - 1) {
-        let wrapper = document.createElement('div');
-        let icon = document.createElement('img');
-
-        wrapper.classList.add('projects-wrapper');
-        wrapper.appendChild(element);
-        icon.src = dropdownIcon;
-        icon.id = 'dropdown-icon';
-        icon.addEventListener('click', () => {
-          projectsClicked === false
-            ? (projectsClicked = true)
-            : (projectsClicked = false);
-          dropdownProjects();
-        });
-        wrapper.appendChild(icon);
-        sideNavBar.appendChild(wrapper);
-      } else {
-        sideNavBar.appendChild(element);
-      }
-    }
-    sideNavRendered = true;
-  };
-
   const open = function () {
-    console.log('is sidenav open = ' + isSideNavOpen);
-    console.log('is rendered = ' + sideNavRendered);
-
-    if (!isSideNavOpen && !sideNavRendered) {
-      renderSideNav();
-    } else {
-      sideNavBar.style.width = '250px';
-    }
-    isSideNavOpen = true;
-    console.log('is sidenav open = ' + isSideNavOpen);
-    console.log('is rendered = ' + sideNavRendered);
+    sideNavBar.style.width = '250px';
+    sideNavFunc.isSideNavOpen = true;
   };
 
   const close = function () {
@@ -62,7 +37,7 @@ export const sideNavFunc = (function () {
     sideNavBar.style.transition = '0.5s';
     sideNavBar.style.width = '0';
     mainContentWrapper.style.marginLeft = '0';
-    isSideNavOpen = false; // Set the sidebar state to closed
+    sideNavFunc.isSideNavOpen = false; // Set the sidebar state to closed
   };
 
   const dropdownProjects = function () {
@@ -73,7 +48,8 @@ export const sideNavFunc = (function () {
     } else {
       icon.style.transform = 'rotate(-90deg)';
     }
+    console.log('worked');
   };
 
-  return { renderSideNav, open, close, isSideNavOpen, sideNavRendered };
+  return { open, close, dropdownProjects, isSideNavOpen };
 })();
