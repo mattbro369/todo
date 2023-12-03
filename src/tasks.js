@@ -20,14 +20,33 @@ export const task = (function () {
 
     addTaskButton.addEventListener('click', () => {
       removeAddTaskButton();
+      removeNoTaskPage();
       renderAddTaskPrompt(contentWrapper);
     });
   };
 
   const renderAddTaskPrompt = function (target) {
-    let addTaskWrapper = document.createElement('div');
-    addTaskWrapper.classList.add('add-task-wrapper');
-    target.appendChild(addTaskWrapper);
+    let promptWrapper = document.createElement('div');
+    promptWrapper.classList.add('add-task-wrapper');
+
+    let promptHeaderWrapper = document.createElement('div');
+    promptHeaderWrapper.id = 'add-task-prompt-header';
+    let promptFormWrapper = document.createElement('div');
+    promptFormWrapper.id = 'add-task-prompt-form';
+    let promptSubmitWrapper = document.createElement('div');
+    promptSubmitWrapper.id = 'add-task-prompt-submit';
+
+    let elementsArray = [
+      promptHeaderWrapper,
+      promptFormWrapper,
+      promptSubmitWrapper,
+    ];
+
+    for (let index = 0; index < elementsArray.length; index++) {
+      promptWrapper.appendChild(elementsArray[index]);
+    }
+
+    target.appendChild(promptWrapper);
   };
 
   const removeAddTaskButton = function () {
@@ -58,6 +77,11 @@ export const task = (function () {
 
     target.appendChild(noTaskWrapper);
     console.log('Finished');
+  };
+
+  const removeNoTaskPage = function () {
+    let noTask = document.getElementById('no-task-wrapper');
+    noTask.remove();
   };
 
   return { renderAddTaskPrompt, renderAddTaskButton, renderNoTaskPage };

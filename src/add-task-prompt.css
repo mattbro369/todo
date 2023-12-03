@@ -1,54 +1,28 @@
-/* Add taskcard prompt */
-
 .add-task-wrapper {
-  display: flex;
-  flex-direction: column;
-  border: 3px solid var(--text-color-light-grey);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 3px solid grey;
   border-radius: 10px;
-  width: 20em;
-  height: fit-content;
-  padding: 0.3em;
-}
-
-.add-task-wrapper form {
+  height: 385px;
+  width: 690px;
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
-  padding: 0.2em;
 }
 
-.close-button-wrapper {
-  display: flex;
-  justify-content: end;
-  margin-top: -5px;
-  margin-right: -5px;
+#add-task-prompt-header {
+  background-color: blue;
+  flex: 0.5;
 }
 
-label {
-  display: flex;
-}
-
-label input {
+#add-task-prompt-form {
+  background-color: pink;
   flex: 1;
-  /* appearance: none; */
 }
 
-.prompt-bottom-section {
-  display: flex;
-  justify-content: space-between;
-}
-
-.date-section {
-  display: flex;
-  align-items: center;
-  gap: 0.2em;
-}
-
-#submit-button {
-  width: 5em;
-  border-radius: 11px;
-  background-color: var(--main-color-purple-off);
-  color: white;
-  font-weight: 600;
-  border: 1px solid var(--text-color-light-grey);
+#add-task-prompt-submit {
+  background-color: yellow;
+  flex: 0.5;
 }
