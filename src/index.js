@@ -3,7 +3,6 @@ import './styles.css';
 import './add-task-prompt.css';
 import './sidenav.css';
 import './content';
-import tickLogo from './assets/tick-logo.svg';
 
 // JS
 import * as sideNavFunctions from './sidenav';
@@ -16,9 +15,6 @@ export const mainContentWrapper = document.getElementById(
   'main-content-wrapper'
 );
 export const contentWrapper = document.getElementById('content-wrapper');
-
-const logo = document.getElementById('tickLogo');
-logo.src = tickLogo;
 
 // Navigation | Open Sidebar | Home
 
