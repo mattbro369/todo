@@ -1,5 +1,6 @@
 // DOM Cache
 import slothImgSrc from './assets/sloth.png';
+import { addTaskPrompt } from './add-task-prompt.js';
 
 export const content = (function () {
   const headingWrapper = document.getElementById('heading-wrapper');
@@ -22,6 +23,31 @@ export const content = (function () {
     let date = new Date();
     dateHeader.textContent = date.toDateString();
     headingWrapper.appendChild(dateHeader);
+  };
+
+  const renderAddTaskButton = function (target) {
+    let addTaskButton = document.createElement('button');
+    let addIcon = document.createElement('img');
+    let addButtonText = document.createElement('div');
+
+    addIcon.src = addIconImg;
+    addIcon.id = 'add-task-icon';
+    addButtonText.textContent = 'Add task';
+    addTaskButton.id = 'add-task-button';
+    addTaskButton.appendChild(addIcon);
+    addTaskButton.appendChild(addButtonText);
+    target.appendChild(addTaskButton);
+
+    addTaskButton.addEventListener('click', () => {
+      removeAddTaskButton();
+      removeNoTaskPage();
+      addTaskPrompt.render(contentWrapper);
+    });
+  };
+
+  const removeAddTaskButton = function () {
+    const target = document.getElementById('add-task-button');
+    target.remove();
   };
 
   const renderNoTaskPage = function (target) {
@@ -49,5 +75,16 @@ export const content = (function () {
     console.log('Finished');
   };
 
-  return { home, renderHomeHeading, renderNoTaskPage };
+  const removeNoTaskPage = function () {
+    let noTask = document.getElementById('no-task-wrapper');
+    noTask.remove();
+  };
+
+  return {
+    home,
+    renderHomeHeading,
+    renderAddTaskButton,
+    removeAddTaskButton,
+    renderNoTaskPage,
+  };
 })();
