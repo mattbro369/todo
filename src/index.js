@@ -5,9 +5,9 @@ import './sidenav.css';
 import './content';
 
 // JS
-import * as sideNavFunctions from './sidenav';
-import * as content from './content';
-import * as taskFunctions from './tasks';
+import { sidenav } from './sidenav';
+import { content } from './content';
+import { tasks } from './tasks';
 
 // DOM Cache
 export const sideNavBar = document.getElementById('sidenav');
@@ -19,20 +19,17 @@ export const contentWrapper = document.getElementById('content-wrapper');
 // Navigation | Open Sidebar | Home
 
 // Render Home on load
-content.renderMain.home();
+content.home();
 
 const navButtons = Array.from(document.getElementsByClassName('navbar-icon'));
 
 navButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    if (
-      button === navButtons[0] &&
-      sideNavFunctions.sideNavFunc.isSideNavOpen === false
-    ) {
-      sideNavFunctions.sideNavFunc.open();
-      console.log(sideNavFunctions.sideNavFunc.isSideNavOpen);
+    if (button === navButtons[0] && sidenav.isSideNavOpen === false) {
+      sidenav.open();
+      console.log(sidenav.isSideNavOpen);
     } else {
-      sideNavFunctions.sideNavFunc.close();
+      sidenav.close();
     }
 
     if (button === navButtons[1]) {
@@ -46,6 +43,7 @@ export const taskArray = [];
 console.log(taskArray.length);
 
 if (taskArray.length < 1) {
-  taskFunctions.task.renderAddTaskButton(contentWrapper);
-  taskFunctions.task.renderNoTaskPage(contentWrapper);
+  tasks.renderAddTaskButton(contentWrapper);
+  // tasks.renderAddTaskPrompt(contentWrapper);
+  content.renderNoTaskPage(contentWrapper);
 }

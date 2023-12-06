@@ -26,7 +26,7 @@ sideNavItems.forEach((item) => {
 
 let isSideNavOpen = false;
 
-export const sideNavFunc = (function () {
+export const sidenav = (function () {
   const open = function () {
     sideNavBar.style.width = '250px';
     sideNavFunc.isSideNavOpen = true;
