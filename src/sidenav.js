@@ -1,14 +1,11 @@
 import { mainContentWrapper } from '.';
-import { sideNavBar } from '.';
-import dropdownIcon from './assets/dropdown-icon.svg';
 
-let projectsClicked = false;
-
-const sideNavItems = Array.from(
+export const sideNavBar = document.getElementById('sidenav');
+export const sideNavItems = Array.from(
   document.getElementsByClassName('sidenav-item')
 );
 
-console.log(sideNavItems);
+let projectsClicked = false;
 
 sideNavItems.forEach((item) => {
   item.addEventListener('click', () => {

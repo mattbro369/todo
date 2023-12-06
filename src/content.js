@@ -1,16 +1,19 @@
-// DOM Cache
-import slothImgSrc from './assets/sloth.png';
+import { currentPage, contentWrapper, headingWrapper } from './index.js';
 import { addTaskPrompt } from './add-task-prompt.js';
 
-export const content = (function () {
-  const headingWrapper = document.getElementById('heading-wrapper');
-  const contentWrapper = document.getElementById('content-wrapper');
+import addIconImg from './assets/add.svg';
+import slothImgSrc from './assets/sloth.png';
 
+export const content = (function () {
   const home = function () {
     renderHomeHeading();
+    renderAddTaskButton(contentWrapper);
+    currentPage = 'home';
   };
 
   const renderHomeHeading = function () {
+    if (currentPage === 'home') return;
+
     //Heading
     let mainHeading = document.createElement('h1');
     mainHeading.textContent = 'Home';
@@ -77,7 +80,14 @@ export const content = (function () {
 
   const removeNoTaskPage = function () {
     let noTask = document.getElementById('no-task-wrapper');
+    if (noTask === undefined) return;
     noTask.remove();
+  };
+
+  const clear = function (target) {
+    while (target.firstChild) {
+      target.removeChild(target.firstChild);
+    }
   };
 
   return {
@@ -86,5 +96,6 @@ export const content = (function () {
     renderAddTaskButton,
     removeAddTaskButton,
     renderNoTaskPage,
+    clear,
   };
 })();
