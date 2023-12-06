@@ -3,7 +3,7 @@ import addIconImg from './assets/add.svg';
 import slothImgSrc from './assets/sloth.png';
 import { contentWrapper, taskArray } from '.';
 
-export const task = (function () {
+export const tasks = (function () {
   // Add Task Button
   const renderAddTaskButton = function (target) {
     let addTaskButton = document.createElement('button');
@@ -54,35 +54,10 @@ export const task = (function () {
     target.remove();
   };
 
-  const renderNoTaskPage = function (target) {
-    let noTaskWrapper = document.createElement('div');
-    let imgWrapper = document.createElement('div');
-    let slothImg = document.createElement('img');
-    let noTaskText = document.createElement('p');
-
-    // Wrapper
-    noTaskWrapper.id = 'no-task-wrapper';
-    imgWrapper.id = 'sloth-image-wrapper';
-
-    // Image
-    slothImg.id = 'sloth-image';
-    slothImg.src = slothImgSrc;
-    imgWrapper.appendChild(slothImg);
-    noTaskWrapper.appendChild(imgWrapper);
-
-    // Text
-    noTaskText.id = 'no-task-text';
-    noTaskText.textContent = "Hooray! You've got nothing to do!";
-    noTaskWrapper.appendChild(noTaskText);
-
-    target.appendChild(noTaskWrapper);
-    console.log('Finished');
-  };
-
   const removeNoTaskPage = function () {
     let noTask = document.getElementById('no-task-wrapper');
     noTask.remove();
   };
 
-  return { renderAddTaskPrompt, renderAddTaskButton, renderNoTaskPage };
+  return { renderAddTaskPrompt, renderAddTaskButton };
 })();
