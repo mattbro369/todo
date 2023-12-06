@@ -35,6 +35,11 @@ h1 {
   gap: 10px;
 }
 
+.menu-icon-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-left,
 .navbar-center,
 .navbar-right {
