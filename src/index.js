@@ -8,6 +8,7 @@ import './content';
 import { sidenav } from './sidenav';
 import { content } from './content';
 import { tasks } from './tasks';
+import { addTaskPrompt } from './add-task-prompt';
 
 // DOM Cache
 export const sideNavBar = document.getElementById('sidenav');
@@ -43,7 +44,6 @@ export const taskArray = [];
 console.log(taskArray.length);
 
 if (taskArray.length < 1) {
-  tasks.renderAddTaskButton(contentWrapper);
-  // tasks.renderAddTaskPrompt(contentWrapper);
+  // addTaskPrompt.render(contentWrapper);
   content.renderNoTaskPage(contentWrapper);
 }
