@@ -18,7 +18,7 @@ sideNavItems.forEach((item) => {
         ? (projectsClicked = true)
         : (projectsClicked = false);
       console.log(projectsClicked);
-      sideNavFunc.dropdownProjects();
+      sidenav.dropdownProjects();
     }
     console.log(item.textContent);
   });
@@ -29,7 +29,7 @@ let isSideNavOpen = false;
 export const sidenav = (function () {
   const open = function () {
     sideNavBar.style.width = '250px';
-    sideNavFunc.isSideNavOpen = true;
+    sidenav.isSideNavOpen = true;
   };
 
   const close = function () {
@@ -37,7 +37,7 @@ export const sidenav = (function () {
     sideNavBar.style.transition = '0.5s';
     sideNavBar.style.width = '0';
     mainContentWrapper.style.marginLeft = '0';
-    sideNavFunc.isSideNavOpen = false; // Set the sidebar state to closed
+    sidenav.isSideNavOpen = false; // Set the sidebar state to closed
   };
 
   const dropdownProjects = function () {

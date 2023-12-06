@@ -33,7 +33,7 @@ navButtons.forEach((button) => {
     }
 
     if (button === navButtons[1]) {
-      content.renderMain.home();
+      content.home();
     }
   });
 });
