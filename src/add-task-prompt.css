@@ -10,6 +10,7 @@
   width: 690px;
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 
 #add-task-prompt-header {
