@@ -5,20 +5,21 @@
   "main": "index.js",
   "private": "true",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.1.0",
     "html-webpack-plugin": "^5.5.3",
     "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1",
-    "push-dir": "^0.4.1"
+    "normalize.css": "^8.0.1"
   }
 }
