@@ -24,7 +24,7 @@ menuIcon.src = imageCache['./menu-icon.png'];
 const homeIcon = document.getElementById('home-icon');
 homeIcon.src = imageCache['./home-icon.png'];
 const tickLogo = document.getElementById('tick-logo');
-tickLogo.src = imageCache['tick-logo.svg'];
+tickLogo.src = imageCache['./tick-logo.svg'];
 const dropdownIcon = document.getElementById('dropdown-icon');
 dropdownIcon.src = imageCache['./dropdown-icon.svg'];
 
