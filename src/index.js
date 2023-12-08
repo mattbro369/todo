@@ -10,7 +10,24 @@ import { content } from './content';
 import { tasks } from './tasks';
 import { addTaskPrompt } from './add-task-prompt';
 
-// DOM Cache
+// Importing images from assets
+export const imageCache = {};
+
+function importAll(r) {
+  r.keys().forEach((key) => (imageCache[key] = r(key)));
+}
+
+importAll(require.context('./assets/', false, /\.(png|svg|jpg|jpeg|gif)$/i));
+
+const menuIcon = document.getElementById('menu-icon');
+menuIcon.src = imageCache['./menu-icon.png'];
+const homeIcon = document.getElementById('home-icon');
+homeIcon.src = imageCache['./home-icon.png'];
+const tickLogo = document.getElementById('tick-logo');
+tickLogo.src = imageCache['./tick-logo.svg'];
+const dropdownIcon = document.getElementById('dropdown-icon');
+dropdownIcon.src = imageCache['./dropdown-icon.svg'];
+
 export const mainContentWrapper = document.getElementById(
   'main-content-wrapper'
 );
