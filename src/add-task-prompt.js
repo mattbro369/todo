@@ -34,6 +34,7 @@ export const addTaskPrompt = (function () {
         title: 'title',
         description: 'description',
         date: 'date',
+        priority: 'priority',
         submit: 'submit',
       },
       type: {
@@ -43,6 +44,7 @@ export const addTaskPrompt = (function () {
       },
       id: {
         submit: 'submit-button',
+        priority: 'priority-dropdown',
       },
       class: {
         formLabel: 'add-form-label',
@@ -54,10 +56,11 @@ export const addTaskPrompt = (function () {
       },
     };
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 5; i++) {
       let label = document.createElement('label');
       let input = document.createElement('input');
       let textArea = document.createElement('textarea');
+      let select = document.createElement('select');
       let target;
 
       switch (i) {
@@ -87,12 +90,20 @@ export const addTaskPrompt = (function () {
           target = document.getElementById(idArray[2]);
           break;
         case 3:
+          // BUILD A CUSTOM DROPDOWN WITH FLAGS
+          label.setAttribute('for', `${prop.attr.priority}`);
+          select.name = prop.attr.priority;
+          select.id = prop.id.priority;
+          target = document.getElementById(idArray[2]);
+          break;
+        case 4:
           label.setAttribute('for', `${prop.attr.submit}`);
           input.type = prop.type.submit;
           input.value = 'Add';
           input.id = prop.id.submit;
           target = document.getElementById(idArray[2]);
           break;
+
         default:
           break;
       }
