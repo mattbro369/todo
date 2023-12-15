@@ -15,18 +15,6 @@
   padding: 10px;
 }
 
-/* #add-task-prompt-header {
-  background-color: blue;
-}
-
-#add-task-prompt-form {
-  background-color: pink;
-}
-
-#add-task-prompt-submit {
-  background-color: yellow;
-} */
-
 #add-task-prompt-header,
 #add-task-prompt-form,
 #add-task-prompt-submit {
@@ -58,4 +46,10 @@ textarea {
 
 #add-task-prompt-submit {
   height: 2em;
+}
+
+/* Custom Select dropdown */
+
+.custom-select-priority {
+  width: 200px;
 }
