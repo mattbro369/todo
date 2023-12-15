@@ -2,11 +2,22 @@ import { Image } from '.';
 
 export const addTaskPrompt = (function () {
   const renderPriorityDropdown = function () {
-    const dropdownBtnIcon = new Image(
-      'dropdown-btn-icon',
-      './dropdown-icon.svg'
-    );
-    dropdownBtnIcon.render();
+    new Image('dropdown-btn-icon', './dropdown-icon.svg').render();
+
+    renderPriorityFlags();
+  };
+
+  const renderPriorityFlags = function () {
+    let flagArr = [
+      new Image('priority-flag-red', './red-flag.png'),
+      new Image('priority-flag-orange', './orange-flag.png'),
+      new Image('priority-flag-yellow', './yellow-flag.png'),
+      new Image('priority-flag-green', './green-flag.png'),
+    ];
+
+    flagArr.forEach((flag) => {
+      flag.render();
+    });
   };
 
   const open = function () {
@@ -19,5 +30,5 @@ export const addTaskPrompt = (function () {
     // Clear the form inputs -> display:none to avoid re-rendering
   };
 
-  return { renderPriorityDropdown };
+  return { renderPriorityDropdown, renderPriorityFlags };
 })();
