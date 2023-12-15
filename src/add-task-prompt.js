@@ -9,6 +9,7 @@ export const addTaskPrompt = (function () {
 
   const renderPriorityFlags = function () {
     let flagArr = [
+      new Image('priority-placeholder-flag', './red-flag.png'),
       new Image('priority-flag-red', './red-flag.png'),
       new Image('priority-flag-orange', './orange-flag.png'),
       new Image('priority-flag-yellow', './yellow-flag.png'),

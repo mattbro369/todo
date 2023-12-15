@@ -50,6 +50,10 @@ textarea {
 
 /* Custom Select dropdown */
 
-.custom-select-priority {
-  width: 200px;
+.custom-select-main {
+  display: flex;
+}
+
+ul {
+  list-style: none;
 }
