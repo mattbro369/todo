@@ -1,4 +1,25 @@
+import { imageCache } from '.';
+
 export const addTaskPrompt = (function () {
+  const renderPriorityDropdown = function () {
+    const dropdownBtnIcon = document.getElementById('dropdown-btn-icon');
+    dropdownBtnIcon.src = imageCache['./dropdown-icon.svg'];
+  };
+
+  const open = function () {
+    // function to open add-task
+    // Simply use display: block or something similar - DO NOT RE-Render
+  };
+
+  const close = function () {
+    // function to close add-task
+    // Clear the form inputs -> display:none to avoid re-rendering
+  };
+
+  return { renderPriorityDropdown };
+})();
+
+const protoRender = (function () {
   const render = function (target) {
     const promptWrapper = document.createElement('div');
     promptWrapper.classList.add('add-task-wrapper');
@@ -117,16 +138,4 @@ export const addTaskPrompt = (function () {
       target.appendChild(label);
     }
   };
-
-  const open = function () {
-    // function to open add-task
-    // Simply use display: block or something similar - DO NOT RE-Render
-  };
-
-  const close = function () {
-    // function to close add-task
-    // Clear the form inputs -> display:none to avoid re-rendering
-  };
-
-  return { render };
 })();
