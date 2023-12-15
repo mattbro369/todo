@@ -19,14 +19,25 @@ function importAll(r) {
 
 importAll(require.context('./assets/', false, /\.(png|svg|jpg|jpeg|gif)$/i));
 
-const menuIcon = document.getElementById('menu-icon');
-menuIcon.src = imageCache['./menu-icon.png'];
-const homeIcon = document.getElementById('home-icon');
-homeIcon.src = imageCache['./home-icon.png'];
-const tickLogo = document.getElementById('tick-logo');
-tickLogo.src = imageCache['./tick-logo.svg'];
-export const dropdownIcon = document.getElementById('dropdown-icon');
-dropdownIcon.src = imageCache['./dropdown-icon.svg'];
+export function Image(targetId, imagePath) {
+  this.targetId = targetId;
+  this.imagePath = imagePath;
+  this.render = function () {
+    let target = document.getElementById(targetId);
+    target.src = imageCache[imagePath];
+  };
+}
+
+const imageArr = [
+  new Image('menu-icon', './menu-icon.png'),
+  new Image('home-icon', './home-icon.png'),
+  new Image('tick-logo', './tick-logo.svg'),
+  new Image('dropdown-icon', './dropdown-icon.svg'),
+];
+
+imageArr.forEach((image) => {
+  image.render();
+});
 
 export const mainContentWrapper = document.getElementById(
   'main-content-wrapper'
