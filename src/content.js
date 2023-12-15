@@ -44,7 +44,7 @@ export const content = (function () {
     addTaskButton.addEventListener('click', () => {
       removeAddTaskButton();
       removeNoTaskPage();
-      addTaskPrompt.render(contentWrapper);
+      addTaskPrompt.renderPriorityDropdown();
     });
   };
 
