@@ -25,7 +25,7 @@ const homeIcon = document.getElementById('home-icon');
 homeIcon.src = imageCache['./home-icon.png'];
 const tickLogo = document.getElementById('tick-logo');
 tickLogo.src = imageCache['./tick-logo.svg'];
-const dropdownIcon = document.getElementById('dropdown-icon');
+export const dropdownIcon = document.getElementById('dropdown-icon');
 dropdownIcon.src = imageCache['./dropdown-icon.svg'];
 
 export const mainContentWrapper = document.getElementById(
