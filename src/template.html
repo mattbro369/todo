@@ -120,53 +120,72 @@
       </div>
       <div id="main-content-wrapper">
         <div id="heading-wrapper"></div>
-        <div id="content-wrapper">
-          <!-- <div class="add-task-wrapper">
-            <div class="close-button-wrapper">
-              <img
-                src="/src/assets/close-icon.png"
-                alt=""
-                class="close-icon"
-              />
-            </div>
-            <form action="">
-              <label for="title">
+        <div id="content-wrapper"></div>
+        <!-- Add task form -->
+        <div class="add-task-wrapper">
+          <form action="">
+            <div id="add-task-prompt-header">
+              <label
+                for="title"
+                class="add-form-label"
+              >
                 <input
                   type="text"
                   name="title"
                   id="title"
+                  class="add-form-input"
                   placeholder="Title..."
                 />
               </label>
-              <label for="description">
-                <input
-                  type="text"
+            </div>
+            <div id="add-task-prompt-form">
+              <label
+                for="description"
+                class="add-form-label"
+              >
+                <textarea
                   name="description"
                   id="description"
+                  class="add-form-input"
+                  cols="30"
+                  rows="10"
                   placeholder="Description..."
+                ></textarea>
+              </label>
+            </div>
+            <div class="add-task-prompt-submit">
+              <label
+                for="date"
+                class="add-form-label"
+                >Due:
+                <input
+                  type="date"
+                  name="date"
+                  id="date"
                 />
               </label>
-              <div class="prompt-bottom-section">
-                <div class="date-section">
-                  <p>Due:</p>
-                  <label for="date">
-                    <input
-                      type="date"
-                      name="date"
-                      id="date"
+              <label
+                for="priority"
+                class="add-form-label"
+              >
+                <div class="custom-select-priority">
+                  <button
+                    class="btn"
+                    id="dropdown-btn"
+                  >
+                    Priority
+                    <img
+                      src=""
+                      alt=""
+                      id="dropdown-btn-icon"
                     />
-                  </label>
+                  </button>
                 </div>
-                <label for="submit">
-                  <input
-                    type="submit"
-                    value="Add"
-                    id="submit-button"
-                  />
-                </label>
-              </div>
-            </form>
-          </div> -->
+              </label>
+            </div>
+          </form>
+          <div id="add-task-prompt-form"></div>
+          <div id="add-task-prompt-submit"></div>
         </div>
       </div>
     </div>
