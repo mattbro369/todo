@@ -34,7 +34,7 @@ export const sidenav = (function () {
     sideNavBar.style.transition = '0.5s';
     sideNavBar.style.width = '0';
     mainContentWrapper.style.marginLeft = '0';
-    sidenav.isSideNavOpen = false; // Set the sidebar state to closed
+    sidenav.isSideNavOpen = false;
   };
 
   const dropdownProjects = function () {
