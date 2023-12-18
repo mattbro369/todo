@@ -9,6 +9,8 @@ export const content = (function () {
     renderHomeHeading();
     renderAddTaskButton(contentWrapper);
     currentPage = 'home';
+
+    addTaskPrompt.render();
   };
 
   const renderHomeHeading = function () {
@@ -44,7 +46,7 @@ export const content = (function () {
     addTaskButton.addEventListener('click', () => {
       removeAddTaskButton();
       removeNoTaskPage();
-      addTaskPrompt.renderPriorityDropdown();
+      addTaskPrompt.priorityDropdown.render();
     });
   };
 
