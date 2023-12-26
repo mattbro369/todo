@@ -78,7 +78,7 @@ export const addTaskPrompt = (function () {
           if (event.target.closest('.dropdown')) {
             console.log('inside');
           } else {
-            console.log('outside');
+            close();
           }
       });
     };
