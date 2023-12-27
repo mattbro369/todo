@@ -45,8 +45,15 @@ export const addTaskPrompt = (function () {
         new Image('priority-flag-green', './green-flag.png'),
       ];
 
+      const priorityArr = ['red', 'orange', 'yellow', 'green'];
+
       flagArr.forEach((flag) => {
         flag.render();
+
+        if (flagArr.indexOf(flag) > 0) {
+          let target = document.getElementById(flag.targetId);
+          target.dataset.priority = priorityArr[flagArr.indexOf(flag) - 1];
+        }
       });
     };
 
@@ -76,11 +83,19 @@ export const addTaskPrompt = (function () {
       document.addEventListener('click', (event) => {
         if (isDropdownOpen === true)
           if (event.target.closest('.dropdown')) {
-            console.log('inside');
+            detectSelection(event.target);
           } else {
             close();
           }
       });
+    };
+
+    const detectSelection = function (target) {
+      let selection;
+      const placeholder = document.getElementById('placeholder-flag');
+
+      selection = target;
+      placeholder.src = target.src;
     };
 
     return { render };
