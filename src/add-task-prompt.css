@@ -32,6 +32,8 @@
 .add-form-input {
   width: 99.6%;
   font-family: inherit;
+  border: 3px solid var(--text-color-light-grey);
+  border-radius: 8px;
 }
 
 input[id='title'] {
