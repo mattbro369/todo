@@ -37,12 +37,15 @@
 }
 
 input[id='title'] {
-  height: 3em;
+  height: 2em;
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 textarea {
   resize: none;
   height: 5em;
+  color: var(--text-color-hover-black);
 }
 
 #add-task-prompt-form {
@@ -51,6 +54,21 @@ textarea {
 
 #add-task-prompt-submit {
   height: 2em;
+}
+
+input[id='date'] {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.priority {
+  flex: 2;
 }
 
 /* Custom Select dropdown */
@@ -108,4 +126,11 @@ ul {
 
 .option > img {
   padding: 5px 0 0 8px;
+}
+
+/* Submit button */
+
+#add-task-submit {
+  padding: 6px 38px;
+  cursor: pointer;
 }
