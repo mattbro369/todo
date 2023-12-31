@@ -94,8 +94,14 @@ export const addTaskPrompt = (function () {
       let selection;
       const placeholder = document.getElementById('placeholder-flag');
 
-      selection = target;
-      placeholder.src = target.src;
+      if (target.children.length > 0) {
+        selection = target.firstChild;
+      } else {
+        selection = target;
+      }
+
+      console.log(selection);
+      placeholder.src = selection.src;
     };
 
     return { render };
