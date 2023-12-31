@@ -84,6 +84,7 @@ export const addTaskPrompt = (function () {
         if (isDropdownOpen === true)
           if (event.target.closest('.dropdown')) {
             detectSelection(event.target);
+            close();
           } else {
             close();
           }
