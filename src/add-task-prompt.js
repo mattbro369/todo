@@ -1,16 +1,21 @@
 import { Image } from '.';
 
 export const addTaskPrompt = (function () {
+  const addTaskWrapper = document.getElementById('add-task-wrapper');
+  let initalRender = false;
+
   const render = function () {
     // render card in full
     priorityDropdown.render();
+    initalRender = true;
   };
 
-  const open = function () {};
+  const open = function () {
+    addTaskWrapper.classList.toggle('add-task-open');
+  };
 
   const close = function () {
-    // function to close add-task
-    // Clear the form inputs -> display:none to avoid re-rendering
+    addTaskWrapper.classList.toggle('add-task-open');
   };
 
   const priorityDropdown = (function () {
@@ -108,5 +113,5 @@ export const addTaskPrompt = (function () {
     return { render };
   })();
 
-  return { priorityDropdown, render };
+  return { render, initalRender, open, close, priorityDropdown };
 })();

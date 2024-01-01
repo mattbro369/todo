@@ -1,18 +1,21 @@
-.add-task-wrapper {
+#add-task-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   border: 0;
-  /* box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.6); */
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
   border-radius: 14px;
   min-height: 175px;
   width: 690px;
-  display: flex;
+  display: none;
   flex-direction: column;
-  padding: 10px;
+  padding: 13px;
+}
+
+.add-task-open {
+  display: flex !important;
 }
 
 #add-task-prompt-header,
@@ -21,8 +24,14 @@
   align-items: center;
 }
 
-#add-task-prompt-submit {
+#add-task-prompt-submit,
+.form-buttons-wrapper {
   display: flex;
+}
+
+.form-buttons-wrapper {
+  gap: 3px;
+  flex: 1;
 }
 
 .add-form-label {
@@ -64,7 +73,7 @@ input[id='date'] {
 .date {
   display: flex;
   align-items: center;
-  flex: 1;
+  flex: 2;
 }
 
 .priority {
@@ -128,9 +137,24 @@ ul {
   padding: 5px 0 0 8px;
 }
 
-/* Submit button */
+/* Submit + cancel button */
 
-#add-task-submit {
+.form-buttons-wrapper > button {
   padding: 6px 38px;
   cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  max-width: 106px;
+  text-align: center;
+}
+
+#add-task-submit {
+  background-color: var(--main-color-purple);
+}
+
+#add-task-cancel {
+  background-color: #e24c4b;
+  padding: 0 27px;
 }

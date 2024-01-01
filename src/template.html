@@ -122,7 +122,7 @@
         <div id="heading-wrapper"></div>
         <div id="content-wrapper"></div>
         <!-- Add task form -->
-        <div class="add-task-wrapper">
+        <div id="add-task-wrapper">
           <form action="">
             <div id="add-task-prompt-header">
               <label
@@ -217,12 +217,20 @@
                   </ul>
                 </div>
               </label>
-              <button
-                type="submit"
-                id="add-task-submit"
-              >
-                Add
-              </button>
+              <div class="form-buttons-wrapper">
+                <button
+                  type="reset"
+                  id="add-task-cancel"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  id="add-task-submit"
+                >
+                  Add
+                </button>
+              </div>
             </div>
           </form>
         </div>

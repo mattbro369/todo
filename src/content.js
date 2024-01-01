@@ -7,10 +7,8 @@ import slothImgSrc from './assets/sloth.png';
 export const content = (function () {
   const home = function () {
     renderHomeHeading();
-    renderAddTaskButton(contentWrapper);
+    // renderAddTaskButton(contentWrapper);
     currentPage = 'home';
-
-    addTaskPrompt.render();
   };
 
   const renderHomeHeading = function () {
@@ -30,6 +28,8 @@ export const content = (function () {
     headingWrapper.appendChild(dateHeader);
   };
 
+  let isAddTaskBtnRendered = false;
+
   const renderAddTaskButton = function (target) {
     let addTaskButton = document.createElement('button');
     let addIcon = document.createElement('img');
@@ -44,15 +44,19 @@ export const content = (function () {
     target.appendChild(addTaskButton);
 
     addTaskButton.addEventListener('click', () => {
-      removeAddTaskButton();
+      toggleHidden(addTaskButton);
       removeNoTaskPage();
-      addTaskPrompt.priorityDropdown.render();
+
+      if (addTaskPrompt.initalRender === false) {
+        addTaskPrompt.render();
+      }
+      addTaskPrompt.open();
     });
+    isAddTaskBtnRendered = true;
   };
 
-  const removeAddTaskButton = function () {
-    const target = document.getElementById('add-task-button');
-    target.remove();
+  const toggleHidden = function (target) {
+    target.classList.toggle('hidden');
   };
 
   const renderNoTaskPage = function (target) {
@@ -76,8 +80,13 @@ export const content = (function () {
     noTaskText.textContent = "Hooray! You've got nothing to do!";
     noTaskWrapper.appendChild(noTaskText);
 
+    if (isAddTaskBtnRendered === false) {
+      renderAddTaskButton(contentWrapper);
+    } else {
+      toggleHidden(addTaskButton);
+    }
+
     target.appendChild(noTaskWrapper);
-    console.log('Finished');
   };
 
   const removeNoTaskPage = function () {
@@ -96,7 +105,7 @@ export const content = (function () {
     home,
     renderHomeHeading,
     renderAddTaskButton,
-    removeAddTaskButton,
+    toggleHidden,
     renderNoTaskPage,
     clear,
   };

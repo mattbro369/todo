@@ -7,8 +7,6 @@ import './add-task-prompt.css';
 // JS
 import { sidenav } from './sidenav';
 import { content } from './content';
-import { tasks } from './tasks';
-import { addTaskPrompt } from './add-task-prompt';
 
 // Importing images from assets
 export const imageCache = {};
@@ -74,6 +72,5 @@ export const taskArray = [];
 console.log(taskArray.length);
 
 if (taskArray.length < 1) {
-  // addTaskPrompt.render(contentWrapper);
   content.renderNoTaskPage(contentWrapper);
 }

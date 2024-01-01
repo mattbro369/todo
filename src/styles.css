@@ -72,6 +72,10 @@ h1 {
 
 /* Content */
 
+.hidden {
+  display: none !important;
+}
+
 #main-content-wrapper {
   height: 86vh;
   display: flex;
