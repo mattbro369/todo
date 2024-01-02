@@ -1,23 +1,36 @@
-import { Image } from '.';
+import { Image, taskArray, contentWrapper } from '.';
+import { content, renderNoTaskPage } from './content';
 
 export const addTaskPrompt = (function () {
   const addTaskWrapper = document.getElementById('add-task-wrapper');
+  const cancelBtn = document.getElementById('add-task-cancel');
   let initalRender = false;
 
   const render = function () {
     // render card in full
     priorityDropdown.render();
     initalRender = true;
+    cancelBtn.addEventListener('click', close);
   };
 
+  // Open and close simply toggle the display:flex class
   const open = function () {
     addTaskWrapper.classList.toggle('add-task-open');
+    // cancelBtnEventHandle();
   };
 
   const close = function () {
     addTaskWrapper.classList.toggle('add-task-open');
   };
 
+  // const cancelBtnEventHandle = function () {
+  //   cancelBtn.addEventListener('click', () => {
+  //     close();
+  //   });
+  // };
+
+  // Priority dropdown module handles creating the JS custom dropdown. It's located here as a module inside the add-task
+  // module
   const priorityDropdown = (function () {
     const dropdownBtn = document.getElementById('custom-btn');
     const dropdown = document.querySelector('.dropdown');
@@ -113,5 +126,11 @@ export const addTaskPrompt = (function () {
     return { render };
   })();
 
-  return { render, initalRender, open, close, priorityDropdown };
+  return {
+    render,
+    initalRender,
+    open,
+    close,
+    priorityDropdown,
+  };
 })();
