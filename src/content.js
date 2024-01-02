@@ -43,10 +43,7 @@ export const content = (function () {
     addTaskButton.appendChild(addButtonText);
     target.appendChild(addTaskButton);
 
-    addTaskButton.addEventListener('click', () => {
-      toggleHidden(addTaskButton);
-      removeNoTaskPage();
-
+    addTaskButton.addEventListener('click', (e) => {
       if (addTaskPrompt.initalRender === false) {
         addTaskPrompt.render();
       }
@@ -83,6 +80,7 @@ export const content = (function () {
     if (isAddTaskBtnRendered === false) {
       renderAddTaskButton(contentWrapper);
     } else {
+      let addTaskButton = document.getElementById('add-task-button');
       toggleHidden(addTaskButton);
     }
 
