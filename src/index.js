@@ -55,7 +55,6 @@ navButtons.forEach((button) => {
   button.addEventListener('click', () => {
     if (button === navButtons[0] && sidenav.isSideNavOpen === false) {
       sidenav.open();
-      console.log(sidenav.isSideNavOpen);
     } else {
       sidenav.close();
     }
