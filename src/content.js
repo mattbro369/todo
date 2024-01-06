@@ -7,7 +7,6 @@ import slothImgSrc from './assets/sloth.png';
 export const content = (function () {
   const home = function () {
     renderHomeHeading();
-    // renderAddTaskButton(contentWrapper);
     currentPage = 'home';
   };
 
@@ -47,7 +46,7 @@ export const content = (function () {
       if (addTaskPrompt.initalRender === false) {
         addTaskPrompt.render();
       }
-      addTaskPrompt.open();
+      addTaskPrompt.close();
     });
     isAddTaskBtnRendered = true;
   };
