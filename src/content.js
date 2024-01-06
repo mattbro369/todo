@@ -103,6 +103,7 @@ export const content = (function () {
     home,
     renderHomeHeading,
     renderAddTaskButton,
+    renderNoTaskPage,
     toggleHidden,
     renderNoTaskPage,
     clear,
