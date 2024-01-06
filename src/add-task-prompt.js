@@ -2,6 +2,7 @@ import { Image } from '.';
 
 export const addTaskPrompt = (function () {
   const addTaskWrapper = document.getElementById('add-task-wrapper');
+  const form = document.getElementById('add-task-form');
   const cancelBtn = document.getElementById('add-task-cancel');
   let initalRender = false;
 
@@ -20,6 +21,15 @@ export const addTaskPrompt = (function () {
 
   const close = function () {
     addTaskWrapper.classList.toggle('add-task-open');
+    form.reset();
+  };
+
+  const captureValues = function () {
+    let formData = new FormData(form);
+    let value = document.getElementById('placeholder-flag').dataset.priority;
+
+    formData.append('priority', value);
+    console.log(formData);
   };
 
   // Priority dropdown module handles creating the JS custom dropdown. It's located here as a module inside the add-task
@@ -119,15 +129,6 @@ export const addTaskPrompt = (function () {
 
     return { render };
   })();
-
-  const captureValues = function () {
-    let form = document.getElementById('add-task-form');
-    let formData = new FormData(form);
-    let value = document.getElementById('placeholder-flag').dataset.priority;
-
-    formData.append('priority', value);
-    console.log(formData);
-  };
 
   return {
     render,
