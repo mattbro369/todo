@@ -1,5 +1,4 @@
-import { Image, taskArray, contentWrapper } from '.';
-import { content, renderNoTaskPage } from './content';
+import { Image } from '.';
 
 export const addTaskPrompt = (function () {
   const addTaskWrapper = document.getElementById('add-task-wrapper');
@@ -22,12 +21,6 @@ export const addTaskPrompt = (function () {
   const close = function () {
     addTaskWrapper.classList.toggle('add-task-open');
   };
-
-  // const cancelBtnEventHandle = function () {
-  //   cancelBtn.addEventListener('click', () => {
-  //     close();
-  //   });
-  // };
 
   // Priority dropdown module handles creating the JS custom dropdown. It's located here as a module inside the add-task
   // module
@@ -81,7 +74,7 @@ export const addTaskPrompt = (function () {
       });
       dropdown.style.display = 'flex';
       isDropdownOpen = true;
-      console.log(isDropdownOpen);
+      // console.log(isDropdownOpen);
 
       detectClickOutside();
     };
@@ -92,7 +85,7 @@ export const addTaskPrompt = (function () {
       });
       dropdown.style.display = 'none';
       isDropdownOpen = false;
-      console.log(isDropdownOpen);
+      // console.log(isDropdownOpen);
     };
 
     const detectClickOutside = function () {
@@ -119,12 +112,22 @@ export const addTaskPrompt = (function () {
         selection = target;
       }
 
-      console.log(selection);
+      // console.log(selection);
       placeholder.src = selection.src;
+      placeholder.dataset.priority = selection.dataset.priority;
     };
 
     return { render };
   })();
+
+  const captureValues = function () {
+    let form = document.getElementById('add-task-form');
+    let formData = new FormData(form);
+    let value = document.getElementById('placeholder-flag').dataset.priority;
+
+    formData.append('priority', value);
+    console.log(formData);
+  };
 
   return {
     render,
@@ -132,5 +135,6 @@ export const addTaskPrompt = (function () {
     open,
     close,
     priorityDropdown,
+    captureValues,
   };
 })();
