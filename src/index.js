@@ -3,10 +3,13 @@ import './styles.css';
 import './sidenav.css';
 import './content';
 import './add-task-prompt.css';
+import './task-functions';
 
 // JS
 import { sidenav } from './sidenav';
 import { content } from './content';
+import { taskArray } from './task-functions';
+import { addTaskPrompt } from './add-task-prompt';
 
 // Importing images from assets
 export const imageCache = {};
@@ -66,10 +69,15 @@ navButtons.forEach((button) => {
   });
 });
 
-export const taskArray = [];
-
-console.log(taskArray.length);
-
 if (taskArray.length < 1) {
   content.renderNoTaskPage(contentWrapper);
 }
+
+// Submit button on Add-task form
+
+const submitBtn = document.getElementById('add-task-submit');
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  addTaskPrompt.captureValues();
+});
