@@ -1,4 +1,5 @@
 import { Image } from '.';
+import { taskArray } from './task-functions';
 
 export const addTaskPrompt = (function () {
   const addTaskWrapper = document.getElementById('add-task-wrapper');
@@ -25,11 +26,17 @@ export const addTaskPrompt = (function () {
   };
 
   const captureValues = function () {
-    let formData = new FormData(form);
-    let value = document.getElementById('placeholder-flag').dataset.priority;
+    let titleValue = document.getElementById('title').value;
+    let descriptionValue = document.getElementById('description').value;
+    let dateValue = document.getElementById('date').value;
+    let priorityValue = document.getElementById('placeholder-flag');
+    priorityValue = priorityValue.dataset.priority;
 
-    formData.append('priority', value);
-    console.log(formData);
+    console.log(titleValue, descriptionValue, dateValue, priorityValue);
+
+    let valueArr = [titleValue, descriptionValue, dateValue, priorityValue];
+
+    return valueArr;
   };
 
   // Priority dropdown module handles creating the JS custom dropdown. It's located here as a module inside the add-task

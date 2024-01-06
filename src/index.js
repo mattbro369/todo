@@ -3,13 +3,13 @@ import './styles.css';
 import './sidenav.css';
 import './content';
 import './add-task-prompt.css';
-import './task-functions';
 
 // JS
 import { sidenav } from './sidenav';
 import { content } from './content';
 import { taskArray } from './task-functions';
 import { addTaskPrompt } from './add-task-prompt';
+import { Task } from './task-functions';
 
 // Importing images from assets
 export const imageCache = {};
@@ -79,5 +79,6 @@ const submitBtn = document.getElementById('add-task-submit');
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  addTaskPrompt.captureValues();
+  let newTask = new Task(addTaskPrompt.captureValues());
+  // console.log(newTask);
 });
