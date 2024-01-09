@@ -4,6 +4,8 @@ import { format } from 'date-fns';
 import addIconImg from './assets/add.svg';
 import slothImgSrc from './assets/sloth.png';
 
+export let isNoTaskPageRendered = false;
+
 export const content = (function () {
   const home = function () {
     renderHomeHeading();
@@ -84,9 +86,11 @@ export const content = (function () {
     }
 
     target.appendChild(noTaskWrapper);
+    isNoTaskPageRendered = true;
   };
 
   const removeNoTaskPage = function () {
+    if (isNoTaskPageRendered === false) return;
     let noTask = document.getElementById('no-task-wrapper');
     if (noTask === undefined) return;
     noTask.remove();
@@ -103,8 +107,8 @@ export const content = (function () {
     renderHomeHeading,
     renderAddTaskButton,
     renderNoTaskPage,
+    removeNoTaskPage,
     toggleHidden,
-    renderNoTaskPage,
     clear,
   };
 })();

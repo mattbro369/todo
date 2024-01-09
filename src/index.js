@@ -3,6 +3,7 @@ import './styles.css';
 import './sidenav.css';
 import './content';
 import './add-task-prompt.css';
+import './tasks.css';
 
 // JS
 import { sidenav } from './sidenav';
@@ -68,9 +69,15 @@ navButtons.forEach((button) => {
   });
 });
 
-if (taskArray.length < 1) {
-  content.renderNoTaskPage(contentWrapper);
+function checkTaskArray(taskArray) {
+  if (taskArray.length < 1) {
+    content.renderNoTaskPage(contentWrapper);
+  } else if (taskArray.length === 1) {
+    content.removeNoTaskPage(contentWrapper);
+  }
 }
+
+checkTaskArray(taskArray);
 
 // Submit button on Add-task form
 
@@ -79,5 +86,9 @@ const submitBtn = document.getElementById('add-task-submit');
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   let newTask = new Task(addTaskPrompt.captureValues());
-  // console.log(newTask);
+  taskArray.push(newTask);
+  checkTaskArray(taskArray);
+  newTask.render(contentWrapper);
+  addTaskPrompt.close();
+  console.log(taskArray);
 });

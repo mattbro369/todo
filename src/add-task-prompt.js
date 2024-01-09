@@ -37,7 +37,7 @@ export const addTaskPrompt = (function () {
     let priorityValue = document.getElementById('placeholder-flag');
     priorityValue = priorityValue.dataset.priority;
 
-    console.log(titleValue, descriptionValue, dateValue, priorityValue);
+    // console.log(titleValue, descriptionValue, dateValue, priorityValue);
 
     let valueArr = [titleValue, descriptionValue, dateValue, priorityValue];
 

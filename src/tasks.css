@@ -1,0 +1,28 @@
+.task-wrapper {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-title {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.task-description {
+  font-size: 0.9em;
+  color: var(--text-color-light-grey);
+}
+
+.task-date {
+  font-size: 0.9em;
+}
+
+.task-priority {
+  height: 30px;
+}
