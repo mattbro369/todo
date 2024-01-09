@@ -1,5 +1,6 @@
 import { Image } from '.';
-import { taskArray } from './task-functions';
+import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 
 export const addTaskPrompt = (function () {
   const addTaskWrapper = document.getElementById('add-task-wrapper');
@@ -8,7 +9,11 @@ export const addTaskPrompt = (function () {
   let initalRender = false;
 
   const render = function () {
-    // render card in full
+    let customDate = document.getElementById('date');
+    let newdate = flatpickr(customDate, {
+      dateFormat: 'd/m/Y',
+    });
+    customDate = newdate;
     priorityDropdown.render();
     initalRender = true;
     cancelBtn.addEventListener('click', close);

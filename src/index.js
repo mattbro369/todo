@@ -39,7 +39,6 @@ const imageArr = [
 imageArr.forEach((image) => {
   image.render();
 });
-
 export const mainContentWrapper = document.getElementById(
   'main-content-wrapper'
 );

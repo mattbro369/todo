@@ -63,6 +63,7 @@ textarea {
 
 #add-task-prompt-submit {
   height: 2em;
+  align-items: center;
 }
 
 input[id='date'] {
@@ -70,10 +71,16 @@ input[id='date'] {
   margin-left: 10px;
 }
 
+#date {
+  width: 111px;
+}
+
 .date {
-  display: flex;
-  align-items: center;
-  flex: 2;
+  margin-right: 34px;
+}
+
+.flatpickr-calendar {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .priority {
@@ -83,8 +90,24 @@ input[id='date'] {
 /* Custom Select dropdown */
 
 .custom-select-priority {
+  position: relative;
   max-width: fit-content;
   max-height: fit-content;
+}
+
+.custom-select-priority .dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  gap: 4px;
+  margin-top: 4px;
+  border: 2px solid var(--text-color-light-grey);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
 .custom-select-main {
@@ -110,18 +133,6 @@ ul {
   border-radius: 5px;
   border: 1px solid var(--main-color-purple);
   position: relative;
-}
-
-.dropdown {
-  display: none;
-  /* Changes to flex on event */
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 4px;
-  border: 2px solid var(--text-color-light-grey);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 5px;
-  background-color: #fff;
 }
 
 .option {

@@ -1,6 +1,6 @@
 import { currentPage, contentWrapper, headingWrapper } from './index.js';
 import { addTaskPrompt } from './add-task-prompt.js';
-
+import { format } from 'date-fns';
 import addIconImg from './assets/add.svg';
 import slothImgSrc from './assets/sloth.png';
 
@@ -22,8 +22,8 @@ export const content = (function () {
     //Date
     let dateHeader = document.createElement('h1');
     dateHeader.id = 'date-header';
-    let date = new Date();
-    dateHeader.textContent = date.toDateString();
+    let date = format(new Date(), 'E do MMM yyyy');
+    dateHeader.textContent = date;
     headingWrapper.appendChild(dateHeader);
   };
 
