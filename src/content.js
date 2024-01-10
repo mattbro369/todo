@@ -1,7 +1,7 @@
 import { currentPage, contentWrapper, headingWrapper } from './index.js';
 import { addTaskPrompt } from './add-task-prompt.js';
 import { format } from 'date-fns';
-import addIconImg from './assets/add.svg';
+import plusIconImg from './assets/plus-icon.png';
 import slothImgSrc from './assets/sloth.png';
 
 export let isNoTaskPageRendered = false;
@@ -36,7 +36,7 @@ export const content = (function () {
     let addIcon = document.createElement('img');
     let addButtonText = document.createElement('div');
 
-    addIcon.src = addIconImg;
+    addIcon.src = plusIconImg;
     addIcon.id = 'add-task-icon';
     addButtonText.textContent = 'Add task';
     addTaskButton.id = 'add-task-button';
@@ -80,9 +80,6 @@ export const content = (function () {
 
     if (isAddTaskBtnRendered === false) {
       renderAddTaskButton(contentWrapper);
-    } else {
-      let addTaskButton = document.getElementById('add-task-button');
-      toggleHidden(addTaskButton);
     }
 
     target.appendChild(noTaskWrapper);
@@ -92,7 +89,7 @@ export const content = (function () {
   const removeNoTaskPage = function () {
     if (isNoTaskPageRendered === false) return;
     let noTask = document.getElementById('no-task-wrapper');
-    if (noTask === undefined) return;
+    if (noTask === undefined || noTask === null) return;
     noTask.remove();
   };
 

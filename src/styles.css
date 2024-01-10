@@ -114,10 +114,11 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
   font-size: 17px;
-  width: 116px;
+  width: 136px;
   height: 35px;
-  background-color: var(--main-color-purple);
-  border: 1px solid var(--text-color-light-grey);
+  background-color: transparent;
+  /* border: 1px solid var(--text-color-light-grey); */
+  border: none;
   border-radius: 17px;
   box-shadow: none;
   margin: 1em;
@@ -129,13 +130,14 @@ h1 {
 }
 
 #add-task-button > div {
-  font-weight: 600;
+  color: var(--main-color-purple);
+  font-weight: 700;
 }
 
 #add-task-button:hover {
   cursor: pointer;
-  background-color: var(--main-color-purple-off);
-  transition: 0.3s;
+  /* background-color: var(--main-color-purple-off);
+  transition: 0.3s; */
 }
 
 /* No task - Sloth image */

@@ -69,7 +69,7 @@ navButtons.forEach((button) => {
   });
 });
 
-function checkTaskArray(taskArray) {
+export function checkTaskArray(taskArray) {
   if (taskArray.length < 1) {
     content.renderNoTaskPage(contentWrapper);
   } else if (taskArray.length === 1) {
