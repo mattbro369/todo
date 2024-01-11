@@ -35,6 +35,8 @@ const imageArr = [
   new Image('home-icon', './home-icon.png'),
   new Image('tick-logo', './tick-logo.svg'),
   new Image('dropdown-icon', './dropdown-icon.svg'),
+  new Image('plus-icon', './plus-icon.png'),
+  new Image('plus-icon-green', './plus-icon-green.png'),
 ];
 
 imageArr.forEach((image) => {

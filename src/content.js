@@ -1,7 +1,5 @@
-import { currentPage, contentWrapper, headingWrapper } from './index.js';
-import { addTaskPrompt } from './add-task-prompt.js';
+import { currentPage, headingWrapper } from './index.js';
 import { format } from 'date-fns';
-import plusIconImg from './assets/plus-icon.png';
 import slothImgSrc from './assets/sloth.png';
 
 export let isNoTaskPageRendered = false;
@@ -29,30 +27,6 @@ export const content = (function () {
     headingWrapper.appendChild(dateHeader);
   };
 
-  let isAddTaskBtnRendered = false;
-
-  const renderAddTaskButton = function (target) {
-    let addTaskButton = document.createElement('button');
-    let addIcon = document.createElement('img');
-    let addButtonText = document.createElement('div');
-
-    addIcon.src = plusIconImg;
-    addIcon.id = 'add-task-icon';
-    addButtonText.textContent = 'Add task';
-    addTaskButton.id = 'add-task-button';
-    addTaskButton.appendChild(addIcon);
-    addTaskButton.appendChild(addButtonText);
-    target.appendChild(addTaskButton);
-
-    addTaskButton.addEventListener('click', (e) => {
-      if (addTaskPrompt.initalRender === false) {
-        addTaskPrompt.render();
-      }
-      addTaskPrompt.close();
-    });
-    isAddTaskBtnRendered = true;
-  };
-
   const toggleHidden = function (target) {
     target.classList.toggle('hidden');
   };
@@ -78,10 +52,6 @@ export const content = (function () {
     noTaskText.textContent = "Hooray! You've got nothing to do!";
     noTaskWrapper.appendChild(noTaskText);
 
-    if (isAddTaskBtnRendered === false) {
-      renderAddTaskButton(contentWrapper);
-    }
-
     target.appendChild(noTaskWrapper);
     isNoTaskPageRendered = true;
   };
@@ -102,7 +72,6 @@ export const content = (function () {
   return {
     home,
     renderHomeHeading,
-    renderAddTaskButton,
     renderNoTaskPage,
     removeNoTaskPage,
     toggleHidden,
