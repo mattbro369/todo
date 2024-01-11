@@ -34,6 +34,10 @@ export function Task(valueArr) {
     taskDescription.textContent = this.description;
     taskInfoWrapper.appendChild(taskDescription);
 
+    task.addEventListener('click', (e) => {
+      taskDescription.classList.toggle('show-description');
+    });
+
     task.appendChild(taskSectionLeft);
     task.appendChild(taskInfoWrapper);
 
@@ -55,6 +59,11 @@ export function Task(valueArr) {
     taskSectionRight.appendChild(taskCompletedBtn);
     taskSectionRight.appendChild(taskDeleteBtn);
 
+    taskCompletedBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      this.complete(e);
+    });
+
     taskDeleteBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       this.delete(e);
@@ -63,6 +72,11 @@ export function Task(valueArr) {
     task.appendChild(taskSectionRight);
 
     target.appendChild(task);
+  };
+
+  this.complete = function (e) {
+    let target = e.target.closest('.task-wrapper');
+    target.classList.toggle('task-completed');
   };
 
   this.delete = function (e) {
